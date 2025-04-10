@@ -1,0 +1,67 @@
+---
+title: "Pokemon"
+subtitle: "Tidy Tuesday Week 13"
+author: "Nicole Bonge"
+toc: true
+toc-location: right-body
+number-sections: true
+date-modified: last-modified
+date-format:  "MM/DD/YYYY"
+format: pdf
+  
+---
+# Motivation
+
+Pokemon is a global icon. It is a TV series that expanded into video games, Pokemon cards/collectibles, and merchandise that made it into a multimillion dollar franchise. Growing up, Pokemon was one of my favorite shows and to this day, it remains one of the fondest memories from my childhood.
+
+# Research Question
+
+Before I begin my project, I should know what I am doing and how to do it. This quarter, I am in my first *Introduction to R* course so my project directly applies the course material. I utilized my lecture notes to learn the technicalities of coding it and the mathematics behind each line I wrote.
+
+After doing my research, I took this approach to solve my own problem: **Could I predict battle outcomes?**
+
+My report is organized into the following section:
+
+1. Loading the Data Set
+
+2. Data Visualization
+
+3. Linear Regression.
+
+## Data Visualization
+
+Data visualization is a powerful tool. @fig-boxplot shows the characteristics by their Types.
+
+
+```{r}
+#| message: false
+#| echo: false
+#| fig-cap: "Boxplot of denfense and attack by their types"
+#| label: fig-boxplot
+source("ttw13-pokemon.R")
+fig1
+```
+
+
+Second, I check out the relationships among six dimensions of information of Pokemon using pairwise scatterplot. As shown in @fig-scatter, I did not see clear relationships.
+```{r}
+#| message: false
+#| echo: false
+#| fig-cap: "Pairwise scatterplot"
+#| label: fig-scatter
+fig2
+```
+## Linear Regression Results
+```{r}
+#| echo: false
+#| label: tbl-regression
+#| tbl-cap: "Linear regression of six indices on HP"
+kableExtra::kable(tbl1)
+```
+As @tbl-regression shows, *Speed* and *Defense* have negative effects on *HP*, while *Attack* has positive effect on Pokemon's HP. *Defense* has no significant relationship with *HP*.
+
+## Conclusion
+
+With this project, I achieved a lot of firsts. It was the first time that I worked with such a large dataset. Not only were there 800 observations, but there were also 12 different variables. This meant I had a lot to play around with and explore, but also there was room for a lot of error.
+
+It was also the first time I have worked with multiple linear regression. I am accustomed to performing linear regression analysis on the relationship between two variables, so working with eight was a new challenge.
